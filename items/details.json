@@ -1,0 +1,32 @@
+{
+  "details": {
+    "details_title": "details_title",
+    "FirstName": "Prati",
+    "LastName": "Mishpaha",
+    "Age": {
+      "text" : "Age",
+      "ages" : "10"},
+    "Gender": {
+      "text" : "Gender",
+      "Genders" :
+      {"Male": "Male",
+      "Female": "Female"}
+    },
+    "Email": "Email",
+    "Faculty": {
+      "text" : "Im interested in:",
+      "Faculties" : {
+        "Art": "Art",
+        "Engineering": "Engineering",
+        "Exact Sciences": "Exact Sciences",
+        "Humanities": "Humanities",
+        "Law": "Law",
+        "Life Sciences": "Life Sciences",
+        "Management": "Management",
+        "Medicine": "Medicine",
+        "Social Sciences": "Social Sciences"
+      }
+    },
+    "end_button": "I'm Done"
+  }
+}

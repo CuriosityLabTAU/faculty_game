@@ -1,0 +1,3 @@
+title=the Game
+author=Goren Gordon
+orientation=landscape

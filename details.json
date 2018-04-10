@@ -1,0 +1,34 @@
+{
+  "details": {
+    "details_title": "שאלון פרטים אישיים",
+    "FirstName": "שם פרטי:",
+    "LastName": "שם משפחה",
+    "Age": "גיל:",
+    "Gender": {
+      "text" : "מין:",
+      "default": "בחר",
+      "Genders" :
+      {"Male": "זכר",
+      "Female": "נקבה"}
+    },
+    "Email": "אימייל",
+    "Faculty": {
+      "text" : "מעוניין ללמוד בפקולטה:",
+      "default": "בחר",
+      "Faculties" : {
+        "Art": "אמנויות",
+        "Engineering": "הנדסה",
+        "Exact Sciences": "מדעים מדויקים",
+        "Humanities": "מדעי הרוח",
+        "Law": "משפטים",
+        "Life Sciences": "מדעי החיים",
+        "Management": "ניהול",
+        "Medicine": "רפואה ובריאות",
+        "Social Sciences": "מדעי החברה"
+      }
+    },
+    "SAT": "ציון פסיכומטרי",
+    "bagrut": "ממוצע בגרויות",
+    "end_button": "סיימתי"
+  }
+}

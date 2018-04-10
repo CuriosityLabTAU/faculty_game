@@ -1,0 +1,237 @@
+#:kivy 1.0
+#:import kivy kivy
+#:import win kivy.core.window
+
+<Item>:
+    # each time a picture is created, the image can delay the loading
+    # as soon as the image is loaded, ensure that the center is changed
+    # to the center of the screen.
+    on_size: self.center = win.Window.center
+    size: image.size
+    size_hint: None, None
+    item_lbl:item_lbl
+
+    Image:
+        id: image
+        source: root.source
+
+        # create initial image to be 400 pixels width
+        size: 200, 200 / self.image_ratio
+
+        Label:
+            id: item_lbl
+            text: "this is a test"
+            pos: 50, -50
+            font_size: 40
+            color: (0, 0.71, 1., 1)
+            font_name: "fonts/the_font_bold.ttf"
+            bold: True
+
+
+<MySpinnerOption@SpinnerOption>:
+    font_name: "fonts/the_font.ttf"
+    font_size: 30
+
+
+<ConsentForm>:
+    title:title
+    body:body
+    checkbox_agree:checkbox_agree
+    checkbox_txt:checkbox_txt
+    button:button
+    canvas:
+        Rectangle:
+            source: 'back3.png'
+            size: self.size
+
+	BoxLayout:
+	    orientation: "vertical"
+	    BoxLayout:
+        Label:
+            id:title
+            font_size: 48
+            font_name: "fonts/the_font.ttf"
+        BoxLayout:
+            size_hint_y:6
+        BoxLayout:
+            orientation: "vertical"
+            id:body
+            size_hint_y:28
+        BoxLayout:
+            size_hint_y:2
+        BoxLayout:
+            size_hint_y: 1
+            BoxLayout:
+                size_hint_x:0.2
+            ConsentButton:
+                name: 'consent_button'
+                the_form: root
+                size_hint_x:0.3
+                size_hint_y:2
+                id:button
+                font_name: "fonts/the_font.ttf"
+                font_size: 30
+#                on_press:root.contin()
+                background_color: (0, 0.71, 1., 1)
+                background_normal: ""
+            BoxLayout:
+
+            Label:
+                size_hint_x:0.4
+                id:checkbox_txt
+                font_name: "fonts/the_font.ttf"
+                font_size: 30
+                color: [0,0,0,1]
+            ConsentCheckBox:
+                name: 'consent_checkbox'
+                the_form: root
+                size_hint_x:0.3
+                id:checkbox_agree
+                active: False
+#                on_press:root.mark_checkbox()
+                background_checkbox_down: "checkbox_active.png"
+                background_checkbox_normal: "checkbox_inactive.png"
+
+        BoxLayout:
+
+<FramingForm>:
+    title:title
+    button:button
+    framing_text:framing_text
+    canvas:
+        Rectangle:
+            source: 'back3.png'
+            size: self.size
+
+	BoxLayout:
+	    orientation: "vertical"
+	    BoxLayout:
+        Label:
+            id:title
+            font_size: 48
+            font_name: "fonts/the_font.ttf"
+        BoxLayout:
+            size_hint_y:6
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y:28
+            Label:
+                id: framing_text
+                font_size: 48
+                font_name: "fonts/the_font.ttf"
+                color: [0,0,0,1]
+        BoxLayout:
+            size_hint_y:2
+        BoxLayout:
+            size_hint_y: 1
+            BoxLayout:
+                size_hint_x:0.2
+            ConsentButton:
+                name: 'framing_button' # BUG FIX
+                the_form: root
+                size_hint_x:0.3
+                size_hint_y:2
+                id:button
+                font_name: "fonts/the_font.ttf"
+                font_size: 30
+                background_color: (0, 0.71, 1., 1)
+                background_normal: ""
+            BoxLayout:
+
+            Label:
+                size_hint_x:0.4
+                font_name: "fonts/the_font.ttf"
+                font_size: 30
+                color: [0,0,0,1]
+
+        BoxLayout:
+
+<AnswerButton>:
+    background_radio_down: "checkbox_active.png"
+    background_radio_normal: "checkbox_inactive.png"
+
+<FinalForm>:
+    title:title
+    curiosity_lbl:curiosity_lbl
+    end_button:end_button
+    canvas:
+        Rectangle:
+            source: 'back3.png'
+            size: self.size
+
+	BoxLayout:
+	    orientation: "vertical"
+	    BoxLayout:
+	        BoxLayout:
+	            size_hint_x:2
+            Label:
+                id:title
+                font_size: 60
+                font_name: "fonts/the_font.ttf"
+                color: [0,0,0,1]
+	    BoxLayout:
+	    BoxLayout:
+        BoxLayout:
+            size_hint_y: 7
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+            BoxLayout:
+            BoxLayout:
+            Label:
+            Label:
+                #size_hint_x: 10
+                id:curiosity_lbl
+                font_size: 40
+                font_name: "fonts/the_font.ttf"
+                color: [0,0,0,1]
+                align: "center"
+        BoxLayout:
+            size_hint_y:1
+        BoxLayout:
+            size_hint_y:0.5
+            BoxLayout:
+                size_hint_y:0.2
+            LoggedButton:
+                name:'final_button'
+                id:end_button
+                background_color:[0,0.71,1,1]
+                background_normal:""
+                font_size:30
+                font_name:"fonts/the_font.ttf"
+            BoxLayout:
+                size_hint_y:0.2
+        BoxLayout:
+            size_hint_y:0.2
+
+<ZeroScreen>:
+    start_button_pre: start_button_pre
+    subject_id: subject_id
+    name: 'zero_screen'
+    Widget:
+        LoggedButton:
+            id: start_button_pre
+            name: 'start_button_pre'
+            background_color: 1,0,1,1
+            background_normal: ''
+            text: 'לחתה'
+            font_name: "fonts/the_font_bold.ttf"
+            font_size: 32
+            size: root.width * 0.15, root.height * 0.15
+            pos: root.width * 0.85 - self.width * 0.5, root.height * 0.75 - self.height * 0.5
+            on_press: app.press_start('pre')
+
+        Label:
+            text: "רפסמ"
+            font_size: 48
+            font_name: "fonts/the_font_bold.ttf"
+            size: root.width * 0.175, root.height * 0.2
+            pos: root.width * 0.15 - self.width * 0.5, root.height * 0.75 - self.height * 0.5
+
+        LoggedTextInput:
+            id: subject_id
+            name: 'subject_id'
+            text: ''
+            font_size: 48
+            size: root.width * 0.4, root.height * 0.2
+            pos: root.width * 0.55 - self.width * 0.5, root.height * 0.75 - self.height * 0.5
