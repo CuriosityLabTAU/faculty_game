@@ -6,6 +6,7 @@ from kivy.graphics import *
 from kivy.storage.jsonstore import JsonStore
 from kivy.properties import ObjectProperty
 from hebrew_management import HebrewManagement
+from kivy_communication import *
 
 
 class FinalForm(BoxLayout):
@@ -83,6 +84,8 @@ class FinalForm(BoxLayout):
         new_lines = HebrewManagement.multiline(self.statements[final_score]["s1"][::-1], 75)
         for nl in range(0, len(new_lines)):
             self.statement_label[nl].text = new_lines[nl]
+
+        KL.log.insert(action=LogAction.data, obj='FacultyGame', comment='The End', sync=True)
 
     def _update_rect(self, instance, value):
         self.rect.pos = instance.pos
