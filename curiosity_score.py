@@ -116,7 +116,7 @@ class CuriosityScore:
             if ck in ['q01', 'q03', 'q05', 'q07', 'q09']:
                 print("stretching: ", cv, cv[3])
                 stretching += int(cv[3])
-            else:
+            elif ck in ['q02', 'q04', 'q06', 'q08', 'q10']:
                 print("embracing: ", cv, cv[3])
                 embracing += int(cv[3])
         self.score['stretching'] = stretching
@@ -146,7 +146,9 @@ class CuriosityScore:
                   embracing=self.score['embracing'],
                   age=self.score['age'],
                   gender=self.score['gender'],
-                  faculty=self.score['faculty'])
+                  faculty=self.score['faculty'],
+                  learning=self.score['learning'],
+                  q_asked=self.score['q_asked'])
 
     def draw(self):
         pass
