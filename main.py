@@ -30,7 +30,7 @@ class ZeroScreen(Screen):
         self.ids['subject_id'].bind(text=self.ids['subject_id'].on_text_change)
 
 
-class CuriosityApp(App):
+class FacultyGameApp(App):
     sm = None
     cg = None
     cf = None
@@ -184,5 +184,5 @@ class CuriosityApp(App):
         self.sm.current = self.sm.next()
 
 if __name__ == '__main__':
-    CuriosityApp().run()
+    FacultyGameApp().run()
 
