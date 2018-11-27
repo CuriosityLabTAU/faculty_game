@@ -264,7 +264,7 @@ class WidgetLogger(Widget):
             if 'button' in touch.profile:
                 comment['button'] = touch.button
 
-            KL.log.insert(action=action, obj=self.name, comment=json.dumps(comment),sync=False)
+            KL.log.insert(action=action, obj=self.name, comment=json.dumps(comment),sync=True)
 
     def on_play_wl(self, filename):
         KL.log.insert(action=LogAction.play, obj=self.name, comment=filename)
